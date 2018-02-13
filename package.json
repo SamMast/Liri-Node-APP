@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SamMast/Liri-Node-APP/issues"
   },
-  "homepage": "https://github.com/SamMast/Liri-Node-APP#readme"
+  "homepage": "https://github.com/SamMast/Liri-Node-APP#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
 }
