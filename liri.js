@@ -13,18 +13,39 @@ const spotify = new Spotify(spotifyKeys);
 var action = process.argv[2];
 var newValue = "";
 
+var request = "";
+var result = "";
+var resultArray = [];
+
+for (var i = 2; i < process.argv.length; i++) {
+	request += (`${process.argv[i]} `);
+}
+
+
 function tweetSearch() {
 	
 	var params = {screen_name: 'sleechinator'};
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 	  	if (!error) {
-		  	for (var i = 0; i < 20; i++) {
-				console.log("-------")
-		    	console.log(`Tweet ${i+1}: ${tweets[i].text}`);
-		    	console.log(`Timestamp: ${tweets[i].created_at}`)
+		  	for (var i = 0; i < 5; i++) {
+
+		  		var tweet = tweets[i].text
+		  		var time = tweets[i].created_at
+
+		  		result += (`-------\nTweet ${i+1}: ${tweet}\nTimestamp: ${time}\n-------`)
+		  		resultArray = [];
+		  		resultArray.push(result);
+
+				console.log(result)
+
 			}
+
+		result = resultArray.join("\n")
+		writeLog();
+
 	  	}
 	});
+
 }
 
 function spotifySearch(item) {
@@ -42,13 +63,15 @@ function spotifySearch(item) {
 	    	return console.log('Error occurred: ' + err);
 	  	}
 
-		console.log("-------") 
-		console.log(data.tracks.items[0].album.artists[0].name); 
-		console.log(data.tracks.items[0].name); 
-		console.log(data.tracks.items[0].preview_url);
-		console.log(data.tracks.items[0].album.name); 
-		console.log("-------")
+	  	var artist = data.tracks.items[0].album.artists[0].name;
+	  	var song = data.tracks.items[0].name;
+	  	var preview = data.tracks.items[0].preview_url;
+	  	var album = data.tracks.items[0].album.name;
 
+	  	result = (`-------\nArtist: ${artist}\nSong: ${song}\nPreview Link: ${preview}\nAlbum: ${album}\n-------`);
+		console.log(result);
+
+		writeLog();
 
 	});	
 }
@@ -75,16 +98,20 @@ function movieSearch(item) {
 	request(queryUrl, function(error, response, body) {
 
 		if (!error && response.statusCode === 200) {
-			console.log("-------------")
-	    	console.log(`Title: ${JSON.parse(body).Title}`);
-	    	console.log(`Release Year: ${JSON.parse(body).Year}`);
-	    	console.log(`IMBD Rating: ${JSON.parse(body).imdbRating}/10`);
-	    	console.log(`Rotten Tomatoes Rating: ${JSON.parse(body).Ratings[1].Value}`);	    	
-	    	console.log(`Country: ${JSON.parse(body).Country}`);
-	    	console.log(`Language: ${JSON.parse(body).Language}`);
-	    	console.log(`Plot: ${JSON.parse(body).Plot}`);
- 	    	console.log(`Actors: ${JSON.parse(body).Actors}`);
-			console.log("-------------")
+			
+			var title = JSON.parse(body).Title
+			var year = JSON.parse(body).Year
+			var imbd = JSON.parse(body).imdbRating
+			var rotten = JSON.parse(body).Ratings[1].Value
+			var country = JSON.parse(body).Country
+			var language = JSON.parse(body).Language;
+			var plot = JSON.parse(body).Plot;
+			var actors = JSON.parse(body).Actors;
+
+			result = (`-------------\nTitle: ${title}\nRelease Year: ${year}\nIMBD Rating: ${imbd}/10\nRotten Tomatoes Rating: ${rotten}\nCountry: ${country}\nLanguage: ${language}\nPlot: ${plot}\nActors: ${actors}\n-------------`);
+
+			console.log(result);
+			writeLog();
 	  	}
 
 	});	
@@ -104,6 +131,8 @@ function decide() {
 		
 		movieSearch(newValue);
 
+	} else {
+		console.log("Invalid Entry")
 	}
 
 }
@@ -113,7 +142,7 @@ function writeLog() {
 
 	var fs = require("fs");
 
-	var data = ""//need to somehow save the data on the console log into a variable, then call this function after each conditional is run
+	var data = (`\nRequest: ${request}\n${result}\n==========`)
 
 	fs.appendFile("log.txt", data, function(err) {
 
@@ -122,7 +151,7 @@ function writeLog() {
 	  }
 
 	  else {
-	    console.log("Added to log.txt");
+	    console.log("(added to log.txt)");
 	  }
 
 	});
@@ -146,6 +175,7 @@ if (action === "do-what-it-says") {
 	  	var dataArr = data.split(",");
 	  	action = dataArr[0];
 	  	newValue = dataArr[1];
+	  	request = (`do-what-it-says (${action} ${newValue})`)
 	  	console.log(action);
 	  	console.log(newValue);
 	  	decide();

@@ -1,0 +1,65 @@
+
+Request: my-tweets 
+-------
+Tweet 1: The connection the @nuggets have lately is crazy. @WillTheThrillB5 @BeMore27 @thats_G_ @JokicNikola15. Just wait til @Paulmillsap4 is back
+Timestamp: Sat Feb 10 23:24:57 +0000 2018
+--------------
+Tweet 2: RT @Ballislife: Dennis Smith Jr will “Never” dunk on Draymond Green Part 2  https://t.co/OgsPiU0Lve
+Timestamp: Sat Feb 10 23:21:19 +0000 2018
+--------------
+Tweet 3: RT @SLAMonline: The Nuggets got the 115-108 win against the Warriors tonight, one game after beating the Thunder. Watch out for this squad.…
+Timestamp: Sun Feb 04 04:40:18 +0000 2018
+--------------
+Tweet 4: @WillTheThrillB5 Block out all the noise. You got this
+Timestamp: Thu Feb 01 02:40:09 +0000 2018
+--------------
+Tweet 5: RT @jphanned: Calling the @FantasyLabsNBA tweet now:
+
+Lineup note: Trey Lyles won’t start due to violation of team rules. Emmanuel Mudiay t…
+Timestamp: Tue Jan 30 14:50:44 +0000 2018
+-------
+==========
+Request: spotify-this-song Jump around 
+-------
+Artist: House Of Pain
+Song: Jump Around
+Preview Link: https://p.scdn.co/mp3-preview/8c0563c907c9415db2c1f73220340325d27dd84d?cid=29f0a349b8ec45a69231d0fd2deddfc3
+Album: House of Pain (Fine Malt Lyrics)
+-------
+==========
+Request: movie-this Harry Potter 
+-------------
+Title: Harry Potter and the Deathly Hallows: Part 2
+Release Year: 2011
+IMBD Rating: 8.1/10
+Rotten Tomatoes Rating: 96%
+Country: USA, UK
+Language: English
+Plot: Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.
+Actors: Ralph Fiennes, Michael Gambon, Alan Rickman, Daniel Radcliffe
+-------------
+==========
+Request: do-what-it-says (movie-this "Space Jam")
+-------------
+Title: Space Jam
+Release Year: 1996
+IMBD Rating: 6.3/10
+Rotten Tomatoes Rating: 38%
+Country: USA
+Language: English
+Plot: In a desperate attempt to win a basketball match and earn their freedom, the Looney Tunes seek the aid of retired basketball champion, Michael Jordan.
+Actors: Michael Jordan, Wayne Knight, Theresa Randle, Manner Washington
+-------------
+==========
+Request: do-what-it-says (movie-this "Space Jam")
+-------------
+Title: Space Jam
+Release Year: 1996
+IMBD Rating: 6.3/10
+Rotten Tomatoes Rating: 38%
+Country: USA
+Language: English
+Plot: In a desperate attempt to win a basketball match and earn their freedom, the Looney Tunes seek the aid of retired basketball champion, Michael Jordan.
+Actors: Michael Jordan, Wayne Knight, Theresa Randle, Manner Washington
+-------------
+==========
