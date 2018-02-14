@@ -27,16 +27,16 @@ function tweetSearch() {
 	var params = {screen_name: 'sleechinator'};
 	client.get('statuses/user_timeline', params, function(error, tweets, response) {
 	  	if (!error) {
+			result = "";
+
 		  	for (var i = 0; i < 5; i++) {
 
 		  		var tweet = tweets[i].text
 		  		var time = tweets[i].created_at
-
-		  		result += (`-------\nTweet ${i+1}: ${tweet}\nTimestamp: ${time}\n-------`)
-		  		resultArray = [];
+		  		result = (`-------\nTweet ${i+1}: ${tweet}\nTimestamp: ${time}\n-------`)
 		  		resultArray.push(result);
 
-				console.log(result)
+				console.log(result);
 
 			}
 
