@@ -2,6 +2,8 @@
 
 **L**anguage **I**nterpretation and **R**ecognition **I**nterface
 
+Takes input and spits output :)
+
 
 ## To use, 
 
