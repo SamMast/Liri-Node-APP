@@ -1,6 +1,6 @@
 # Liri-Node-APP
 
-*L*anguage *I*nterpretation and *R*ecognition *I*nterface
+**L**anguage **I**nterpretation and **R**ecognition **I**nterface
 
 
 ## To use, 
