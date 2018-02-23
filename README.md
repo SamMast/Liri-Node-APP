@@ -11,6 +11,19 @@ Takes input and spits output :)
 
 * Create a .env file in the cloned repository.  You must enter your Twitter and Spotify keys/tokens into this .env file.  Here is the format:
 
+		```
+		# Spotify API keys
+
+		SPOTIFY_ID=your-spotify-id
+		SPOTIFY_SECRET=your-spotify-secret
+
+		# Twitter API keys
+
+		TWITTER_CONSUMER_KEY=your-twitter-consumer-key
+		TWITTER_CONSUMER_SECRET=your-twitter-consumer-secret
+		TWITTER_ACCESS_TOKEN_KEY=your-access-token-key
+		TWITTER_ACCESS_TOKEN_SECRET=your-twitter-access-token-secret
+		```
 
 
 * Once all packages are installed and .env file is created, open your teminal
