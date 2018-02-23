@@ -9,7 +9,7 @@ Takes input and spits output :)
 
 * Clone repository, use an "npm install" in your terminale to install all necessary packages for game from package-json file.
 
-* Create a .env file in the cloned repository.  You must enter your Twitter and Spotify keys/tokens into this .env file.  Here is the format:
+* Create a .env file in the cloned repository.  You must enter your Twitter and Spotify keys/tokens/SECRETS into this .env file.  Here is what you should enter in the .env file (INSERT YOUR DETAILS IN ALL THE NECESSARY SPOTS):
 
 		```
 		# Spotify API keys
